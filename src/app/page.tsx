@@ -1,69 +1,151 @@
 import Image from "next/image";
+import Link from "next/link";
+import { Coffee, IceCreamCone, Soup, Sparkles, Clock3 } from "lucide-react";
+
+const categories = [
+  {
+    title: "Coffee & Matcha",
+    description: "Espresso, iced coffee, matcha and Belgian hot choc.",
+    icon: Coffee,
+    tone: "bg-primary text-primary-foreground",
+  },
+  {
+    title: "Momo & Mains",
+    description: "Steamed dumplings, burgers, wraps and Pirka specials.",
+    icon: Soup,
+    tone: "bg-accent text-accent-foreground",
+  },
+  {
+    title: "Gelato & Sides",
+    description: "Creamy gelato, fries and other grab-and-go treats.",
+    icon: IceCreamCone,
+    tone: "bg-secondary text-secondary-foreground border border-border",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
+    <div className="flex flex-col">
+      {/* Hero */}
+      <section className="mx-auto grid w-full max-w-6xl items-center gap-12 px-6 py-16 md:grid-cols-2 md:px-10 md:py-24">
+        <div className="flex flex-col items-start gap-6">
+          <span className="font-heading text-xs tracking-widest text-primary">
+            PIRKA · CANBERRA
+          </span>
+          <h1 className="font-display text-4xl leading-tight text-foreground sm:text-5xl md:text-6xl">
+            Great Brews,
+            <br />
+            Good Vibes.
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="max-w-md text-base leading-relaxed text-muted-foreground">
+            From espresso and matcha to momo and gelato — Pirka is your spot for
+            slow mornings, quick catch-ups and everything in between, right in
+            the heart of Canberra.
           </p>
+          <div className="flex flex-wrap items-center gap-4">
+            <Link
+              href="/menu"
+              className="font-heading rounded-full bg-primary px-7 py-3.5 text-xs text-primary-foreground shadow-sm transition-transform hover:scale-105">
+              View Menu
+            </Link>
+            <Link
+              href="/#visit"
+              className="font-heading rounded-full border border-primary px-7 py-3.5 text-xs text-primary transition-colors hover:bg-primary/10">
+              Get Directions
+            </Link>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="relative mx-auto flex w-full max-w-sm items-center justify-center">
+          <div className="absolute inset-0 rounded-full bg-accent" />
+          <Image
+            src="/prika_logo.png"
+            alt="Pirka Canberra tower illustration"
+            width={420}
+            height={552}
+            className="relative h-auto w-2/3 drop-shadow-sm"
+            priority
+          />
+
+          <div className="absolute -left-4 bottom-6 flex items-center gap-2 rounded-2xl border border-border bg-card px-4 py-3 shadow-sm sm:-left-8">
+            <Clock3 className="h-5 w-5 text-primary" />
+            <div className="flex flex-col leading-tight">
+              <span className="font-heading text-[10px] text-primary">
+                OPEN DAILY
+              </span>
+              <span className="text-xs text-muted-foreground">[Add hours]</span>
+            </div>
+          </div>
+
+          <div className="absolute -right-4 top-6 flex items-center gap-2 rounded-2xl border border-border bg-card px-4 py-3 shadow-sm sm:-right-8">
+            <Sparkles className="h-5 w-5 text-primary" />
+            <div className="flex flex-col leading-tight">
+              <span className="font-heading text-[10px] text-primary">
+                MADE FRESH
+              </span>
+              <span className="text-xs text-muted-foreground">Every day</span>
+            </div>
+          </div>
         </div>
-      </main>
+      </section>
+
+      {/* Category cards */}
+      <section className="mx-auto w-full max-w-6xl px-6 py-8 md:px-10 md:py-12">
+        <div className="grid gap-6 sm:grid-cols-3">
+          {categories.map(({ title, description, icon: Icon, tone }) => (
+            <Link
+              key={title}
+              href="/menu"
+              className={`group flex flex-col gap-4 rounded-3xl p-7 transition-transform hover:-translate-y-1 ${tone}`}>
+              <Icon className="h-8 w-8" />
+              <h3 className="font-heading text-sm">{title}</h3>
+              <p className="text-sm leading-relaxed opacity-80">
+                {description}
+              </p>
+              <span className="mt-2 font-heading text-[10px] tracking-wide opacity-70 transition-opacity group-hover:opacity-100">
+                SEE MENU →
+              </span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* About */}
+      <section
+        id="about"
+        className="mx-auto grid w-full max-w-6xl items-center gap-12 px-6 py-16 md:grid-cols-2 md:px-10 md:py-24">
+        <div className="relative mx-auto flex w-full max-w-xs items-center justify-center md:order-2">
+          <div className="absolute inset-0 rounded-full bg-primary/10" />
+          <Image
+            src="/prika_logo.png"
+            alt="Pirka Canberra logo"
+            width={420}
+            height={552}
+            className="relative h-auto w-2/3"
+          />
+        </div>
+
+        <div className="flex flex-col items-start gap-5 md:order-1">
+          <span className="font-heading text-xs tracking-widest text-primary">
+            ABOUT US
+          </span>
+          <h2 className="font-display text-3xl leading-tight text-foreground sm:text-4xl">
+            More Than Just Coffee.
+          </h2>
+          <p className="text-base leading-relaxed text-muted-foreground">
+            Pirka brings together the ritual of good coffee and the comfort of
+            momo, all under one roof in Canberra. Whether you&apos;re grabbing a
+            quick flat white before work or settling in for steak and dumplings
+            with friends, we&apos;ve built a menu — and a space — for every part
+            of your day.
+          </p>
+          <Link
+            href="/menu"
+            className="font-heading rounded-full bg-primary px-7 py-3.5 text-xs text-primary-foreground shadow-sm transition-transform hover:scale-105">
+            Explore The Full Menu
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }
