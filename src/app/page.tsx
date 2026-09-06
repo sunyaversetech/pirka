@@ -67,7 +67,7 @@ export default function Home() {
             priority
           />
 
-          <div className="absolute -left-4 bottom-6 flex items-center gap-2 rounded-2xl border border-border bg-card px-4 py-3 shadow-sm sm:-left-8">
+          {/* <div className="absolute -left-4 bottom-6 flex items-center gap-2 rounded-2xl border border-border bg-card px-4 py-3 shadow-sm sm:-left-8">
             <Clock3 className="h-5 w-5 text-primary" />
             <div className="flex flex-col leading-tight">
               <span className="font-heading text-[10px] text-primary">
@@ -75,7 +75,7 @@ export default function Home() {
               </span>
               <span className="text-xs text-muted-foreground">[Add hours]</span>
             </div>
-          </div>
+          </div> */}
 
           <div className="absolute -right-4 top-6 flex items-center gap-2 rounded-2xl border border-border bg-card px-4 py-3 shadow-sm sm:-right-8">
             <Sparkles className="h-5 w-5 text-primary" />
