@@ -5,7 +5,7 @@ import { MenuExplorer } from "@/components/menu-explorer";
 export const metadata: Metadata = {
   title: "Menu | Pirka Canberra",
   description:
-    "The full Pirka Canberra menu — coffee, matcha, gelato, momo, burgers and more.",
+    "The full Pirka Canberra menu — coffee, matcha, momo, burgers and more.",
 };
 
 export default function MenuPage() {
@@ -19,7 +19,7 @@ export default function MenuPage() {
           Our Menu
         </h1>
         <p className="max-w-md text-base leading-relaxed text-muted-foreground">
-          Coffee, matcha, gelato, momo and more — everything Pirka serves, in
+          Coffee, matcha, momo, burgers and more — everything Pirka serves, in
           one place.
         </p>
       </div>
@@ -39,9 +39,9 @@ export default function MenuPage() {
         <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-sm">
           <Image
             src="/menu/menu_1.png"
-            alt="Pirka Canberra drinks menu — coffee, iced coffee, matcha and gelato"
-            width={1425}
-            height={2013}
+            alt="Pirka Canberra food menu — morning rush, burgers, momo, Pirka meals and sides"
+            width={1414}
+            height={2000}
             className="h-auto w-full"
             sizes="(min-width: 1024px) 50vw, 100vw"
           />
@@ -49,26 +49,19 @@ export default function MenuPage() {
         <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-sm">
           <Image
             src="/menu/menu_2.png"
-            alt="Pirka Canberra food menu — momo, burgers, sides and Pirka specials"
-            width={1425}
-            height={2013}
+            alt="Pirka Canberra drinks menu — coffee, iced coffee, matcha and cold refreshments"
+            width={1414}
+            height={2000}
             className="h-auto w-full"
             sizes="(min-width: 1024px) 50vw, 100vw"
           />
         </div>
       </div>
 
-      <div className="flex w-full max-w-55 flex-col items-center gap-3 pt-4 text-center">
-        <div className="relative h-32 w-full overflow-hidden">
-          <Image
-            src="/menu/menu_3.png"
-            alt="Pirka Canberra"
-            fill
-            className="object-cover object-[center_58%]"
-          />
-        </div>
+      <div className="flex w-full max-w-md flex-col items-center gap-3 pt-4 text-center">
         <p className="text-xs text-muted-foreground">
-          Please let the server know of any food allergens.
+          Please let the server know of any food allergens. Not all ingredients
+          are listed on the menu. Allergen-free not guaranteed.
         </p>
       </div>
     </div>

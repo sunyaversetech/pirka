@@ -1,24 +1,24 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Coffee, IceCreamCone, Soup, Sparkles, Clock3 } from "lucide-react";
+import { Coffee, Hamburger, Soup, Sparkles, Clock3 } from "lucide-react";
 
 const categories = [
   {
     title: "Coffee & Matcha",
-    description: "Espresso, iced coffee, matcha and Belgian hot choc.",
+    description: "Espresso, iced coffee, matcha, hot choc and chai.",
     icon: Coffee,
     tone: "bg-primary text-primary-foreground",
   },
   {
     title: "Momo & Mains",
-    description: "Steamed dumplings, burgers, wraps and Pirka specials.",
+    description: "Momo dumplings, fish & chips, schnitzel and Pirka meals.",
     icon: Soup,
     tone: "bg-accent text-accent-foreground",
   },
   {
-    title: "Gelato & Sides",
-    description: "Creamy gelato, fries and other grab-and-go treats.",
-    icon: IceCreamCone,
+    title: "Burgers & Sides",
+    description: "Smash burgers, loaded fries and morning croissants.",
+    icon: Hamburger,
     tone: "bg-secondary text-secondary-foreground border border-border",
   },
 ];
@@ -38,7 +38,7 @@ export default function Home() {
             Good Vibes.
           </h1>
           <p className="max-w-md text-base leading-relaxed text-muted-foreground">
-            From espresso and matcha to momo and gelato — Pirka is your spot for
+            From espresso and matcha to momo and burgers — Pirka is your spot for
             slow mornings, quick catch-ups and everything in between, right in
             the heart of Canberra.
           </p>
@@ -135,7 +135,7 @@ export default function Home() {
           <p className="text-base leading-relaxed text-muted-foreground">
             Pirka brings together the ritual of good coffee and the comfort of
             momo, all under one roof in Canberra. Whether you&apos;re grabbing a
-            quick flat white before work or settling in for steak and dumplings
+            quick flat white before work or settling in for burgers and dumplings
             with friends, we&apos;ve built a menu — and a space — for every part
             of your day.
           </p>

@@ -55,6 +55,12 @@ export function MenuExplorer() {
               )}
             </div>
 
+            {category.note && (
+              <p className="-mt-2 text-sm italic text-muted-foreground">
+                {category.note}
+              </p>
+            )}
+
             <div className="grid gap-x-10 gap-y-6 sm:grid-cols-2">
               {category.items.map((item) => (
                 <div key={item.name} className="flex flex-col gap-1">

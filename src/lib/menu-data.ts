@@ -9,6 +9,7 @@ export type MenuCategory = {
   id: string;
   label: string;
   priceHeading?: string;
+  note?: string;
   items: MenuItem[];
 };
 
@@ -17,62 +18,50 @@ export const menuData: MenuCategory[] = [
     id: "coffee",
     label: "Coffee",
     priceHeading: "R | L",
+    note: "Alternate milk: Almond, Oat, Soya, Lactose Free — extra $1",
     items: [
       { name: "Espresso, Piccolo", price: "$4" },
       { name: "Long Black", price: "$4 | $5" },
-      { name: "Flat White", price: "$4 | $5" },
-      { name: "Cappuccino", price: "$4 | $5" },
-      { name: "Latte", price: "$4 | $5" },
-      { name: "Belgian Mocha", price: "$7 | $8" },
-      { name: "Belgian Hot Choc", price: "$7 | $8" },
-      { name: "Chai Latte", price: "$4 | $5" },
-      { name: "Tea", price: "$4" },
+      { name: "Flat White", price: "$5 | $6" },
+      { name: "Cappuccino", price: "$5 | $6" },
+      { name: "Latte", price: "$5 | $6" },
+      { name: "Mocha", price: "$5 | $6" },
+      { name: "Hot Choc", price: "$5 | $6" },
+      { name: "Chai Latte", price: "$5 | $6" },
+      { name: "Tea (T2)", price: "$5" },
+      { name: "Cookies", price: "$2" },
     ],
   },
   {
-    id: "cold-coffee",
-    label: "Cold Coffee",
-    priceHeading: "R",
+    id: "iced-coffee",
+    label: "Iced Coffee",
     items: [
       { name: "Iced Long Black", price: "$6" },
-      { name: "Iced Coffee", price: "$8" },
       { name: "Iced Latte", price: "$6" },
-      { name: "Spiced Vanilla Iced Latte", price: "$8" },
     ],
   },
   {
     id: "matcha",
     label: "Matcha",
-    priceHeading: "R",
     items: [
       { name: "Matcha Latte", price: "$6" },
       { name: "Iced Matcha", price: "$6" },
-      { name: "Strawberry Cream Matcha", price: "$11" },
-      { name: "Mango Cream Matcha", price: "$11" },
-    ],
-  },
-  {
-    id: "gelato",
-    label: "Gelato",
-    priceHeading: "R",
-    items: [
-      { name: "Chocolate", price: "$6 | $8" },
-      { name: "Vanilla", price: "$6 | $8" },
-      { name: "Strawberry", price: "$6 | $8" },
     ],
   },
   {
     id: "cold-refreshments",
     label: "Cold Refreshments",
-    priceHeading: "R",
     items: [
-      { name: "Coke, Fanta, Lemonade", price: "$4" },
+      { name: "Coke, Fanta, Sprite, Solo", price: "$4" },
       { name: "Water", price: "$4" },
+      { name: "Apple Juice", price: "$4" },
+      { name: "Powerade", price: "$6" },
+      { name: "Ice Tea", price: "$6" },
     ],
   },
   {
-    id: "grab-go",
-    label: "Grab & Go",
+    id: "morning-rush",
+    label: "Morning Rush",
     items: [
       {
         name: "Breakfast Croissants",
@@ -80,52 +69,50 @@ export const menuData: MenuCategory[] = [
         description: "Plain | Ham & Cheese | Cheese & Tomato",
       },
       {
-        name: "Sandwich",
-        price: "$10",
-        description: "Cheese & Tomato | Ham & Cheese | Chicken (pesto) & Cheese",
-      },
-      {
-        name: "Wrap",
-        price: "$12",
-        description: "Chicken, Cheese | Bacon & Egg | Veg — with mixed lettuce & aioli.",
+        name: "Toastie",
+        price: "$12 | $12",
+        description: "Cheese & Tomato | Ham & Cheese",
       },
       {
         name: "Bacon & Egg Roll",
         price: "$12",
         description:
-          "Grilled bacon and egg served on gourmet milk bun with tomato relish.",
+          "Grilled bacon and egg served on gourmet milk bun with bbq sauce.",
       },
     ],
   },
   {
     id: "burgers-chips",
     label: "Burgers & Chips",
+    note: "Burgers served with a side of chips. Drink combo +$3 for a soft drink can.",
     items: [
       {
-        name: "Chicken Burger",
-        price: "$15.50",
-        description:
-          "Chicken, american cheese, tomato, onion, and lettuce with chipotle mayo.",
-        note: "Choose Chicken: southern fry | grilled | schnitzel",
-      },
-      {
         name: "Cheese Burger",
-        price: "$15.50",
+        price: "$18",
         description:
-          "Grilled beef patty, american cheese, pickle with mustard sauce and tomato sauce.",
-        note: "Extra beef patty: $4",
+          "Smash beef patty, American cheese, pickles with mustard sauce and tomato sauce.",
       },
       {
-        name: "Halloumi",
-        price: "$15.50",
+        name: "Classic Burger",
+        price: "$19",
         description:
-          "Grilled halloumi, grilled zucchini, tomato, onion, and lettuce with pesto mayo.",
+          "Smash beef patty, American cheese, lettuce, tomato, onion, pickles with pirka burger sauce.",
       },
       {
-        name: "Fish",
-        price: "$15.50",
+        name: "Bacon Deluxe Burger",
+        price: "$22",
         description:
-          "Fried battered fish, tomato, onion, and lettuce with tartar sauce.",
+          "Smash beef patty, American cheese, lettuce, tomato, onion, pickles with pirka burger sauce.",
+      },
+      {
+        name: "Fried Chicken Burger",
+        price: "$21",
+        description: "Chicken, lettuce with pirka burger sauce.",
+      },
+      {
+        name: "Fish Burger",
+        price: "$19",
+        description: "Fried battered fish, lettuce with tartar sauce.",
       },
     ],
   },
@@ -135,13 +122,9 @@ export const menuData: MenuCategory[] = [
     items: [
       {
         name: "Nuggets & Chips",
-        price: "$9",
-        description: "Fried nugget and chips served with tomato sauce.",
-      },
-      {
-        name: "Fish & Chips",
-        price: "$11",
-        description: "Fried fish and chips served with tomato sauce.",
+        price: "$12",
+        description:
+          "Fried chicken nuggets (6) and chips served with tomato sauce.",
       },
     ],
   },
@@ -151,38 +134,37 @@ export const menuData: MenuCategory[] = [
     items: [
       {
         name: "Chicken (Dumpling)",
-        price: "$14.50",
+        price: "$18",
         description:
-          "Chicken mince dumplings served with tomato chutney or chilli sauce.",
+          "Chicken mince (dumpling - 10 pcs) served with tomato chutney or chilli sauce.",
       },
       {
         name: "Vegetarian (Dumpling)",
-        price: "$14.50",
+        price: "$18",
         description:
-          "Mix veg dumplings served with tomato chutney or chilli sauce.",
+          "Mix veg (dumpling - 10 pcs) served with tomato chutney or chilli sauce.",
       },
     ],
   },
   {
-    id: "pirka-special",
-    label: "Pirka Special",
+    id: "pirka-meal",
+    label: "Pirka Meal",
     items: [
       {
-        name: "Steak & Potato",
-        price: "$24",
-        description: "Steak fillet, fried mustang potato with chimichurri sauce.",
-      },
-      {
-        name: "Beer Battered Fish & Chips",
-        price: "$15.50",
+        name: "Battered Fish & Chips",
+        price: "$18",
         description:
           "Battered fried fish, chips served with tartar sauce and lemon wedge.",
       },
       {
-        name: "Chicken Lollipop",
-        price: "$12",
-        description:
-          "Deep fried chicken drumstick (wings) served with tomato chutney.",
+        name: "Chicken Schnitzel & Chips",
+        price: "$18",
+        description: "Fried schnitzel, chips served with tomato sauce.",
+      },
+      {
+        name: "Chicken Tenders & Chips",
+        price: "$14",
+        description: "Fried chicken tenders, chips served with tomato sauce.",
       },
     ],
   },
@@ -191,27 +173,24 @@ export const menuData: MenuCategory[] = [
     label: "Sides",
     items: [
       {
-        name: "Fries",
+        name: "Chips",
         price: "$8",
         description:
           "Deep fried potato seasoned with pirka salt and served with tomato sauce.",
       },
       {
-        name: "Mustang Fries",
-        price: "$9",
+        name: "Loaded Fries",
+        price: "$14",
         description:
-          "Deep fried potato wedges seasoned with pirka special spices and served with tomato chutney.",
+          "Deep fried potato with bacon, cheese sauce, mayonnaise, parmesan snow, and seasoned with pirka special spices.",
       },
       {
-        name: "Chicken Sausage",
+        name: "Chicken Sausage (2)",
         price: "$9",
         description: "Deep fried chicken sausage served with tomato chutney.",
       },
-      {
-        name: "Chicken Bites",
-        price: "$9",
-        description: "Deep fried chicken served with tomato chutney.",
-      },
+      { name: "Potato Scallop", price: "$3" },
+      { name: "Hash Browns", price: "$3" },
     ],
   },
 ];

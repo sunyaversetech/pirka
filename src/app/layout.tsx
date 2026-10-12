@@ -25,7 +25,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Pirka Canberra | Coffee, Momo & More",
   description:
-    "Pirka Canberra — coffee, matcha, momo, burgers and gelato near the heart of the city.",
+    "Pirka Canberra — coffee, matcha, momo, burgers and more near the heart of the city.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
