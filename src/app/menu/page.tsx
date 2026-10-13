@@ -60,8 +60,8 @@ export default function MenuPage() {
 
       <div className="flex w-full max-w-md flex-col items-center gap-3 pt-4 text-center">
         <p className="text-xs text-muted-foreground">
-          Please let the server know of any food allergens. Not all ingredients
-          are listed on the menu. Allergen-free not guaranteed.
+          Please let the server know of any food allergens. All ingredients are
+          not listed on the menu. Allergen-free not guaranteed.
         </p>
       </div>
     </div>
